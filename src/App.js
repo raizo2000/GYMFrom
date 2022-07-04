@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import Users from './components/Users';
+import About from './components/About';
+import Drop from './components/Drop';
+import DropUi from './components/DropUi';
+import Dropdownd from './components/Dropdownd';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+       
+          <Route path="/" element={<Users/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/drop" element={<Drop/>} />
+          <Route path="/dropui" element={<DropUi/>} />
+          <Route path="/dropdownd" element={<Dropdownd/>} />
+        
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
